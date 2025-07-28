@@ -126,7 +126,7 @@ export default function Experience() {
             }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            With 4+ years of professional experience, I've delivered high-performance solutions 
+            With 4+ years of professional experience, I&apos;ve delivered high-performance solutions 
             for leading technology companies using modern stacks like AWS, Next.js, and Tailwind CSS.
           </motion.p>
         </div>

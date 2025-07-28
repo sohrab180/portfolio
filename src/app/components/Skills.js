@@ -118,7 +118,7 @@ export default function Skills() {
             }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            With 4+ years of development experience, I've mastered technologies that enable me to build complete, scalable web applications.
+            With 4+ years of development experience, I&apos;ve mastered technologies that enable me to build complete, scalable web applications.
           </motion.p>
         </div>
         

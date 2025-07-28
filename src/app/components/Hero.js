@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function Hero() {
   const codeContainerRef = useRef(null);
@@ -309,7 +310,7 @@ export default function Hero() {
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-teal-500/20 rounded-full" />
-            <img 
+            <Image 
               src="/img/sohrab.png" 
               alt="Sohrab Ali Ansari"
               className="w-full h-full object-cover rounded-full relative z-10"

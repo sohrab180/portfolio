@@ -1,6 +1,8 @@
 // src/app/layout.js
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
+import { Inter } from 'next/font/google'; // or use any Google font you prefer
+
+const inter = Inter({ subsets: ['latin'] });
+
 import './globals.css';
 import Script from 'next/script';
 
@@ -8,7 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
+        className={inter.className}
         suppressHydrationWarning={true} // Add this to ignore the ColorZilla attribute
       >
         {children}
