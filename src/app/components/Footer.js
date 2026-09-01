@@ -56,9 +56,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-[#071426] border-t border-sky-400/10 overflow-hidden">
-      {/* Ambient glows, one sky one emerald, to lift the flat dark panel */}
-      <div className="pointer-events-none absolute -top-24 left-1/4 h-64 w-64 rounded-full bg-sky-500/10 blur-3xl" />
+    <footer className="relative bg-[#071426] border-t border-cyan-400/10 overflow-hidden">
+      {/* Ambient glows, one cyan one emerald, to lift the flat dark panel */}
+      <div className="pointer-events-none absolute -top-24 left-1/4 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 right-1/4 h-64 w-64 rounded-full bg-emerald-500/10 blur-3xl" />
 
       <div className="relative container mx-auto max-w-7xl px-6 pt-16 pb-8">
@@ -110,7 +110,7 @@ export default function Footer() {
                       e.preventDefault();
                       scrollToSection(link.id);
                     }}
-                    className="group inline-flex cursor-pointer items-center gap-2 text-sm text-slate-400 transition-colors hover:text-sky-400"
+                    className="group inline-flex cursor-pointer items-center gap-2 text-sm text-slate-400 transition-colors hover:text-cyan-400"
                   >
                     <span className="h-1 w-1 rounded-full bg-slate-600 transition-colors group-hover:bg-emerald-400" />
                     {link.label}
@@ -133,7 +133,7 @@ export default function Footer() {
               {expertise.map((item) => (
                 <li
                   key={item}
-                  className="rounded-full border border-sky-400/15 bg-[#12305f]/50 px-2.5 py-1 text-xs text-slate-300"
+                  className="rounded-full border border-cyan-400/15 bg-[#12305f]/50 px-2.5 py-1 text-xs text-slate-300"
                 >
                   {item}
                 </li>
@@ -153,7 +153,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-3">
               {contactDetails.map((item) => (
                 <li key={item.text} className="flex items-start gap-2.5 text-sm text-slate-400">
-                  <span className={`mt-0.5 shrink-0 ${item.external ? 'text-emerald-400' : 'text-sky-400'}`}>
+                  <span className={`mt-0.5 shrink-0 ${item.external ? 'text-emerald-400' : 'text-cyan-400'}`}>
                     {item.icon}
                   </span>
                   {item.href ? (
@@ -161,7 +161,7 @@ export default function Footer() {
                       href={item.href}
                       {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                       className={`cursor-pointer break-all transition-colors ${
-                        item.external ? 'hover:text-emerald-400' : 'hover:text-sky-400'
+                        item.external ? 'hover:text-emerald-400' : 'hover:text-cyan-400'
                       }`}
                     >
                       {item.text}
@@ -182,7 +182,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   whileHover={{ y: -3 }}
                   whileTap={{ scale: 0.95 }}
-                  className="cursor-pointer rounded-lg border border-sky-400/15 bg-[#12305f]/50 p-2.5 text-slate-300 transition-colors hover:border-sky-400/40 hover:text-sky-400"
+                  className="cursor-pointer rounded-lg border border-cyan-400/15 bg-[#12305f]/50 p-2.5 text-slate-300 transition-colors hover:border-cyan-400/40 hover:text-cyan-400"
                   aria-label={link.name}
                 >
                   {link.icon}
@@ -205,7 +205,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 flex flex-col-reverse items-center gap-4 border-t border-sky-400/10 pt-6 sm:flex-row sm:justify-between">
+        <div className="mt-12 flex flex-col-reverse items-center gap-4 border-t border-cyan-400/10 pt-6 sm:flex-row sm:justify-between">
           <p className="text-slate-400 text-xs text-center sm:text-left">
             © {currentYear} Sohrab Ali Ansari. All rights reserved.
           </p>

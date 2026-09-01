@@ -75,7 +75,7 @@ export default function Chatbot() {
     <>
       <motion.button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-gradient-to-r from-sky-500 to-sky-600 text-white shadow-lg shadow-sky-500/30 flex items-center justify-center"
+        className="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-gradient-to-r from-cyan-500 to-cyan-600 text-white shadow-lg shadow-cyan-500/30 flex items-center justify-center"
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
         aria-label={isOpen ? 'Close chat' : 'Open chat'}
@@ -90,9 +90,9 @@ export default function Chatbot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-24 right-5 z-50 w-[90vw] max-w-sm h-[70vh] max-h-[520px] bg-[#0b1e3d] border border-sky-400/20 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+            className="fixed bottom-24 right-5 z-50 w-[90vw] max-w-sm h-[70vh] max-h-[520px] bg-[#0b1e3d] border border-cyan-400/20 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
           >
-            <div className="px-4 py-3 bg-gradient-to-r from-sky-500 to-sky-600 flex items-center gap-2">
+            <div className="px-4 py-3 bg-gradient-to-r from-cyan-500 to-cyan-600 flex items-center gap-2">
               <FaRobot className="text-white text-lg" />
               <div>
                 <p className="text-white font-bold text-sm leading-tight">Ask about Sohrab</p>
@@ -106,7 +106,7 @@ export default function Chatbot() {
                   <div
                     className={`max-w-[85%] px-3 py-2 rounded-xl text-sm leading-relaxed ${
                       msg.role === 'user'
-                        ? 'bg-sky-500 text-white rounded-br-sm'
+                        ? 'bg-cyan-500 text-white rounded-br-sm'
                         : 'bg-[#12305f] text-slate-100 rounded-bl-sm'
                     }`}
                   >
@@ -128,7 +128,7 @@ export default function Chatbot() {
                     <button
                       key={idx}
                       onClick={() => sendMessage(q)}
-                      className="text-xs px-3 py-1.5 rounded-full bg-[#12305f] text-sky-300 border border-sky-500/30 hover:bg-[#16386e] transition-colors"
+                      className="text-xs px-3 py-1.5 rounded-full bg-[#12305f] text-cyan-300 border border-cyan-500/30 hover:bg-[#16386e] transition-colors"
                     >
                       {q}
                     </button>
@@ -137,18 +137,18 @@ export default function Chatbot() {
               )}
             </div>
 
-            <form onSubmit={handleSubmit} className="p-3 border-t border-sky-400/15 flex items-center gap-2">
+            <form onSubmit={handleSubmit} className="p-3 border-t border-cyan-400/15 flex items-center gap-2">
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask a question..."
-                className="flex-1 bg-[#12305f] border border-sky-400/20 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-sky-500"
+                className="flex-1 bg-[#12305f] border border-cyan-400/20 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
               />
               <button
                 type="submit"
                 disabled={isSending || !input.trim()}
-                className="w-9 h-9 rounded-lg bg-sky-500 text-white flex items-center justify-center disabled:opacity-50"
+                className="w-9 h-9 rounded-lg bg-cyan-500 text-white flex items-center justify-center disabled:opacity-50"
                 aria-label="Send message"
               >
                 <FaPaperPlane className="text-sm" />

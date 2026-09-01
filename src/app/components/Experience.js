@@ -86,9 +86,9 @@ export default function Experience() {
     <div className="relative overflow-hidden" ref={ref}>
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-20 right-10 w-64 h-64 bg-sky-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-80 h-80 bg-sky-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 left-1/4 w-40 h-40 bg-sky-400/10 rounded-full blur-2xl"></div>
+        <div className="absolute top-20 right-10 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 left-1/4 w-40 h-40 bg-cyan-400/10 rounded-full blur-2xl"></div>
       </div>
       
       <div className="container mx-auto relative z-10">
@@ -103,10 +103,10 @@ export default function Experience() {
             }}
             transition={{ duration: 0.6 }}
           >
-            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-600">Experience</span>
+            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-600">Experience</span>
           </motion.h2>
           <motion.div 
-            className="w-24 h-1 bg-gradient-to-r from-sky-500 to-sky-600 mx-auto rounded-full cursor-default"
+            className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-cyan-600 mx-auto rounded-full cursor-default"
             initial={{ width: 0 }}
             animate={controls}
             variants={{
@@ -141,13 +141,13 @@ export default function Experience() {
           }}
           transition={{ delay: 0.4 }}
         >
-          <div className="bg-[#12305f]/50 backdrop-blur-sm p-1 rounded-xl border border-sky-400/15 shadow-lg cursor-pointer">
+          <div className="bg-[#12305f]/50 backdrop-blur-sm p-1 rounded-xl border border-cyan-400/15 shadow-lg cursor-pointer">
             {experiences.map((exp, index) => (
               <motion.button
                 key={index}
                 className={`px-6 py-3 text-sm md:text-base rounded-lg transition-all duration-300 ${
                   activeTab === index 
-                    ? 'bg-gradient-to-r from-sky-500 to-sky-600 text-white font-semibold shadow-lg' 
+                    ? 'bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-semibold shadow-lg' 
                     : 'text-slate-300 hover:text-white hover:bg-[#16386e]/60'
                 }`}
                 onClick={() => setActiveTab(index)}
@@ -172,15 +172,15 @@ export default function Experience() {
             variants={item}
           >
             <div className="w-full">
-              <div className="bg-gradient-to-br from-[#12305f]/70 to-[#0b1e3d]/70 p-6 md:p-8 rounded-2xl border border-sky-500/20 shadow-2xl backdrop-blur-sm relative overflow-hidden transition-all duration-500 hover:border-sky-500/40 hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] group cursor-default">
+              <div className="bg-gradient-to-br from-[#12305f]/70 to-[#0b1e3d]/70 p-6 md:p-8 rounded-2xl border border-cyan-500/20 shadow-2xl backdrop-blur-sm relative overflow-hidden transition-all duration-500 hover:border-cyan-500/40 hover:shadow-[0_0_30px_rgba(34, 211, 238,0.15)] group cursor-default">
                 {/* Glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-sky-500/5 to-transparent opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-transparent opacity-20 group-hover:opacity-30 transition-opacity"></div>
                 
                 {/* Tech stack floating icons */}
                 {activeTab === 0 && (
                   <div className="absolute top-4 right-4 flex space-x-2 cursor-default">
-                    <div className="w-8 h-8 bg-sky-500/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-sky-500/20">
-                      <span className="text-xs font-bold text-sky-400">AWS</span>
+                    <div className="w-8 h-8 bg-cyan-500/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-cyan-500/20">
+                      <span className="text-xs font-bold text-cyan-400">AWS</span>
                     </div>
                     <div className="w-8 h-8 bg-blue-500/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-blue-500/20">
                       <span className="text-xs font-bold text-blue-400">NXT</span>
@@ -204,12 +204,12 @@ export default function Experience() {
                       </div>
                       
                       <div className="flex flex-wrap items-center gap-2 my-3 cursor-default">
-                        <h4 className="text-xl font-medium text-sky-400">{experiences[activeTab].company}</h4>
+                        <h4 className="text-xl font-medium text-cyan-400">{experiences[activeTab].company}</h4>
                         <span className="text-slate-400 text-sm hidden md:inline">|</span>
                         <span className="text-slate-400 text-sm md:text-base block">{experiences[activeTab].location}</span>
                       </div>
                       
-                      <span className="bg-sky-900/40 text-sky-300 px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block mt-1 cursor-default">
+                      <span className="bg-cyan-900/40 text-cyan-300 px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block mt-1 cursor-default">
                         {experiences[activeTab].period}
                       </span>
                     </div>
@@ -219,28 +219,28 @@ export default function Experience() {
   {experiences[activeTab].impact.map((stat, idx) => (
     <div 
       key={idx} 
-      className="flex flex-col items-center justify-center bg-sky-900/20 p-3 rounded-xl border border-sky-500/10 min-w-[80px] hover:bg-sky-900/30 transition-colors relative cursor-pointer mb-10"
+      className="flex flex-col items-center justify-center bg-cyan-900/20 p-3 rounded-xl border border-cyan-500/10 min-w-[80px] hover:bg-cyan-900/30 transition-colors relative cursor-pointer mb-10"
     >
-      <span className="text-xl font-bold text-sky-400">
+      <span className="text-xl font-bold text-cyan-400">
         <CountUp
           end={parseInt(stat.value)}
           duration={2}
           suffix="%"
         />
       </span>
-      <span className="text-xs text-sky-300/80 mt-1 text-center">{stat.metric}</span>
+      <span className="text-xs text-cyan-300/80 mt-1 text-center">{stat.metric}</span>
       
       {/* Progress bar */}
       <div className="w-full mt-2 bg-[#0e2450] rounded-full h-1.5">
         <div 
-          className="bg-gradient-to-r from-sky-500 to-sky-600 h-1.5 rounded-full" 
+          className="bg-gradient-to-r from-cyan-500 to-cyan-600 h-1.5 rounded-full" 
           style={{ width: stat.value }}
         ></div>
       </div>
       
       {/* Tooltip - only shows when this specific card is hovered */}
-      <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 opacity-0 hover:opacity-100 transition-opacity duration-200 bg-[#12305f] p-3 rounded-lg border border-sky-500/30 text-xs w-48 z-30 shadow-lg">
-        <div className="text-sky-400 font-medium">{stat.tooltip}</div>
+      <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 opacity-0 hover:opacity-100 transition-opacity duration-200 bg-[#12305f] p-3 rounded-lg border border-cyan-500/30 text-xs w-48 z-30 shadow-lg">
+        <div className="text-cyan-400 font-medium">{stat.tooltip}</div>
       </div>
     </div>
   ))}
@@ -248,8 +248,8 @@ export default function Experience() {
                   </div>
                   
                   <div className="space-y-4 mt-6 cursor-default">
-                    <h4 className="text-lg font-semibold text-sky-200 flex items-center">
-                      <svg className="w-5 h-5 mr-2 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <h4 className="text-lg font-semibold text-cyan-200 flex items-center">
+                      <svg className="w-5 h-5 mr-2 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                       </svg>
                       Key Achievements:
@@ -263,7 +263,7 @@ export default function Experience() {
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: 0.1 * idx }}
                         >
-                          <svg className="w-5 h-5 text-sky-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <svg className="w-5 h-5 text-cyan-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                           <p className="text-slate-300">{achievement}</p>
@@ -273,8 +273,8 @@ export default function Experience() {
                   </div>
                   
                   <div className="mt-8 cursor-default">
-                    <h4 className="text-lg font-semibold text-sky-200 mb-3 flex items-center">
-                      <svg className="w-5 h-5 mr-2 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <h4 className="text-lg font-semibold text-cyan-200 mb-3 flex items-center">
+                      <svg className="w-5 h-5 mr-2 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                       </svg>
                       Technologies Used:
@@ -290,14 +290,14 @@ export default function Experience() {
                             key={techIndex} 
                             className={`px-4 py-2 rounded-xl text-sm font-medium border transition-colors cursor-default ${
                               isHighlighted 
-                                ? 'bg-gradient-to-r from-sky-500/20 to-sky-600/20 text-sky-300 border-sky-500/40 shadow-[0_0_10px_rgba(56,189,248,0.2)]' 
-                                : 'bg-sky-900/30 text-sky-300 border-sky-500/20'
+                                ? 'bg-gradient-to-r from-cyan-500/20 to-cyan-600/20 text-cyan-300 border-cyan-500/40 shadow-[0_0_10px_rgba(34, 211, 238,0.2)]' 
+                                : 'bg-cyan-900/30 text-cyan-300 border-cyan-500/20'
                             }`}
                             whileHover={{ 
                               scale: 1.05,
                               backgroundColor: isHighlighted 
-                                ? "rgba(2,132,199, 0.4)" 
-                                : "rgba(2,132,199, 0.4)",
+                                ? "rgba(8, 145, 178, 0.4)" 
+                                : "rgba(8, 145, 178, 0.4)",
                               transition: { duration: 0.2 } 
                             }}
                           >
@@ -315,7 +315,7 @@ export default function Experience() {
         
         {/* Career summary with modern tech focus */}
         <motion.div 
-          className="mt-16 bg-gradient-to-br from-sky-900/20 to-sky-800/20 p-8 rounded-2xl border border-sky-500/20 backdrop-blur-sm max-w-4xl mx-auto shadow-xl cursor-default"
+          className="mt-16 bg-gradient-to-br from-cyan-900/20 to-cyan-800/20 p-8 rounded-2xl border border-cyan-500/20 backdrop-blur-sm max-w-4xl mx-auto shadow-xl cursor-default"
           initial={{ opacity: 0, y: 30 }}
           animate={controls}
           variants={{
@@ -327,7 +327,7 @@ export default function Experience() {
           <div className="flex flex-col md:flex-row items-center">
             <div className="flex-1 mb-6 md:mb-0">
               <h3 className="text-2xl font-bold text-white mb-3">
-                <span className="text-sky-400">5.6+</span> Years of Development Excellence
+                <span className="text-cyan-400">5.6+</span> Years of Development Excellence
               </h3>
               <p className="text-slate-300">
                 Including 4.5+ years specializing in full-stack development with AWS cloud solutions,
@@ -339,7 +339,7 @@ export default function Experience() {
                 {["AWS", "Next.js", "Tailwind CSS", "Angular", "Node.js", "MongoDB", "AI Automation", "Prompt Engineering"].map((tech, idx) => (
                   <span 
                     key={idx}
-                    className="px-3 py-1 bg-sky-900/30 text-sky-300 rounded-full text-xs font-medium border border-sky-500/20 cursor-default"
+                    className="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-full text-xs font-medium border border-cyan-500/20 cursor-default"
                   >
                     {tech}
                   </span>
@@ -356,12 +356,12 @@ export default function Experience() {
               ].map((stat, index) => (
                 <div 
                   key={index}
-                  className="text-center bg-sky-900/30 p-4 rounded-xl border border-sky-500/20 hover:bg-sky-900/40 transition-all duration-300 group hover:shadow-[0_0_15px_rgba(56,189,248,0.2)] cursor-pointer"
+                  className="text-center bg-cyan-900/30 p-4 rounded-xl border border-cyan-500/20 hover:bg-cyan-900/40 transition-all duration-300 group hover:shadow-[0_0_15px_rgba(34, 211, 238,0.2)] cursor-pointer"
                 >
-                  <div className="text-2xl font-bold text-sky-400 group-hover:text-sky-300 transition-colors">
+                  <div className="text-2xl font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors">
                     {stat.value}
                   </div>
-                  <div className="text-slate-300 text-sm mt-1 group-hover:text-sky-200/80 transition-colors">
+                  <div className="text-slate-300 text-sm mt-1 group-hover:text-cyan-200/80 transition-colors">
                     {stat.label}
                   </div>
                 </div>

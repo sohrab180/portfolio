@@ -48,7 +48,7 @@ export default function Contact() {
           icon: 'success',
           title: 'Message Sent!',
           text: "Thanks for reaching out. I'll get back to you soon.",
-          confirmButtonColor: '#0ea5e9'
+          confirmButtonColor: '#06b6d4'
         });
       } else {
         Swal.fire({ icon: 'error', title: 'Oops!', text: 'Something went wrong. Please try again.' });
@@ -69,9 +69,9 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}>
-          Get In <span className="text-sky-400">Touch</span>
+          Get In <span className="text-cyan-400">Touch</span>
         </motion.h2>
-        <motion.div className="w-20 h-1 bg-sky-500 mx-auto"
+        <motion.div className="w-20 h-1 bg-cyan-500 mx-auto"
           initial={{ width: 0 }}
           animate={{ width: 80 }}
           transition={{ delay: 0.2, duration: 0.5 }} />
@@ -105,7 +105,7 @@ export default function Contact() {
 
         {/* Contact Form */}
         <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-          <div className="bg-[#12305f]/50 p-8 rounded-xl border border-sky-400/15">
+          <div className="bg-[#12305f]/50 p-8 rounded-xl border border-cyan-400/15">
             <h3 className="text-2xl font-bold text-white mb-6">Send Me a Message</h3>
             <form onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -116,11 +116,11 @@ export default function Contact() {
               <div className="mb-6">
                 <label htmlFor="message" className="block text-slate-300 mb-2">Message</label>
                 <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows="5"
-                  className="w-full bg-[#0e2450]/60 border border-sky-400/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent"
+                  className="w-full bg-[#0e2450]/60 border border-cyan-400/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                   placeholder="Type here..." required />
               </div>
               <motion.button type="submit"
-                className="w-full px-6 py-3.5 bg-gradient-to-r from-sky-500 to-sky-600 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-sky-500/30 transition-all duration-300"
+                className="w-full px-6 py-3.5 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300"
                 whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
                 disabled={isSubmitting}>
                 {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -136,8 +136,8 @@ export default function Contact() {
 // ➕ Reusable Components
 
 function InfoItem({ icon, title, value, href, external, accent }) {
-  const tone = accent ? 'text-emerald-400' : 'text-sky-500';
-  const hover = accent ? 'hover:text-emerald-400' : 'hover:text-sky-400';
+  const tone = accent ? 'text-emerald-400' : 'text-cyan-500';
+  const hover = accent ? 'hover:text-emerald-400' : 'hover:text-cyan-400';
 
   return (
     <div className="flex items-start">
@@ -169,13 +169,13 @@ function SocialIcon({ url, icon, accent }) {
       target="_blank"
       rel="noopener noreferrer"
       className={`p-4 rounded-full cursor-pointer transition-colors ${
-        accent ? 'bg-emerald-400/10 border border-emerald-400/30 hover:bg-emerald-400/20' : 'bg-[#12305f]/50 hover:bg-sky-500'
+        accent ? 'bg-emerald-400/10 border border-emerald-400/30 hover:bg-emerald-400/20' : 'bg-[#12305f]/50 hover:bg-cyan-500'
       }`}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
       {React.cloneElement(icon, {
-        className: `text-xl ${accent ? 'text-emerald-300' : 'text-sky-400 hover:text-white'}`,
+        className: `text-xl ${accent ? 'text-emerald-300' : 'text-cyan-400 hover:text-white'}`,
       })}
     </motion.a>
   );
@@ -191,7 +191,7 @@ function InputField({ label, name, type = "text", value, onChange, ...rest }) {
         name={name}
         value={value}
         onChange={onChange}
-        className="w-full bg-[#0e2450]/60 border border-sky-400/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent"
+        className="w-full bg-[#0e2450]/60 border border-cyan-400/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
         required
         {...rest}
       />

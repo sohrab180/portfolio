@@ -102,10 +102,10 @@ export default function Skills() {
             }}
             transition={{ duration: 0.5 }}
           >
-            Technical <span className="text-sky-400">Skills</span>
+            Technical <span className="text-cyan-400">Skills</span>
           </motion.h2>
           <motion.div 
-            className="w-20 h-1 bg-gradient-to-r from-sky-500 to-sky-600 mx-auto rounded-full"
+            className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-cyan-600 mx-auto rounded-full"
             initial={{ width: 0 }}
             animate={controls}
             variants={{
@@ -137,7 +137,7 @@ export default function Skills() {
                 category === 'ai' ? '' : 'capitalize'
               } ${
                 activeTab === category
-                  ? 'bg-gradient-to-r from-sky-500 to-sky-600 text-white'
+                  ? 'bg-gradient-to-r from-cyan-500 to-cyan-600 text-white'
                   : 'bg-[#12305f] text-slate-300 hover:bg-[#16386e]'
               }`}
               onClick={() => setActiveTab(category)}
@@ -161,11 +161,11 @@ export default function Skills() {
               <motion.div key={index} variants={item}>
                 <div className="flex justify-between mb-2">
                   <span className="font-medium text-slate-300">{skill.name}</span>
-                  <span className="text-sky-500 font-bold">{skill.level}%</span>
+                  <span className="text-cyan-500 font-bold">{skill.level}%</span>
                 </div>
                 <div className="w-full bg-[#12305f] rounded-full h-2.5">
                   <motion.div 
-                    className="bg-gradient-to-r from-sky-500 to-sky-600 h-2.5 rounded-full" 
+                    className="bg-gradient-to-r from-cyan-500 to-cyan-600 h-2.5 rounded-full" 
                     initial={{ width: 0 }}
                     animate={{ width: `${skill.level}%` }}
                     transition={{ duration: 1, delay: 0.2 + index * 0.1 }}
@@ -180,11 +180,11 @@ export default function Skills() {
               <motion.div key={index} variants={item}>
                 <div className="flex justify-between mb-2">
                   <span className="font-medium text-slate-300">{skill.name}</span>
-                  <span className="text-sky-500 font-bold">{skill.level}%</span>
+                  <span className="text-cyan-500 font-bold">{skill.level}%</span>
                 </div>
                 <div className="w-full bg-[#12305f] rounded-full h-2.5">
                   <motion.div 
-                    className="bg-gradient-to-r from-sky-500 to-sky-600 h-2.5 rounded-full" 
+                    className="bg-gradient-to-r from-cyan-500 to-cyan-600 h-2.5 rounded-full" 
                     initial={{ width: 0 }}
                     animate={{ width: `${skill.level}%` }}
                     transition={{ duration: 1, delay: 0.2 + (index + Math.ceil(skillsData[activeTab].length / 2)) * 0.1 }}
@@ -197,7 +197,7 @@ export default function Skills() {
         
         {/* Development Approach */}
         <motion.div 
-          className="mt-12 bg-gradient-to-br from-[#12305f] to-[#0b1e3d] p-6 rounded-xl border border-sky-500/20 backdrop-blur-sm"
+          className="mt-12 bg-gradient-to-br from-[#12305f] to-[#0b1e3d] p-6 rounded-xl border border-cyan-500/20 backdrop-blur-sm"
           initial={{ opacity: 0, y: 30 }}
           animate={controls}
           variants={{
@@ -207,7 +207,7 @@ export default function Skills() {
           transition={{ delay: 0.5, duration: 0.5 }}
         >
           <h3 className="text-xl md:text-2xl font-bold text-white mb-4 flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-sky-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-cyan-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
             </svg>
             Development Approach
@@ -221,7 +221,7 @@ export default function Skills() {
             {['Component-Based Architecture', 'RESTful APIs', 'JWT Authentication', 'AWS Integration', 'CI/CD', 'Responsive Design', 'Performance Optimization', 'Cross-Browser Compatibility', 'AI Automation', 'Prompt Engineering'].map((item, index) => (
               <motion.span 
                 key={index}
-                className="px-3 py-1.5 bg-sky-900/30 text-sky-300 rounded-full text-sm"
+                className="px-3 py-1.5 bg-cyan-900/30 text-cyan-300 rounded-full text-sm"
                 initial={{ opacity: 0 }}
                 animate={controls}
                 variants={{

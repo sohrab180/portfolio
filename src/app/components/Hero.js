@@ -113,8 +113,8 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(160deg,#102a52_0%,#0b1e3d_45%,#071426_100%)]" />
 
       {/* Soft radial highlights that keep the navy from reading flat */}
-      <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_15%_20%,rgba(56,189,248,0.10),transparent_70%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(45%_45%_at_85%_75%,rgba(125,211,252,0.10),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_15%_20%,rgba(34, 211, 238,0.10),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(45%_45%_at_85%_75%,rgba(103, 232, 249,0.10),transparent_70%)]" />
 
       {/* Blueprint grid — fades out toward the edges (see globals.css) */}
       <div className="hero-grid absolute inset-0 hidden md:block" />
@@ -137,12 +137,12 @@ export default function Hero() {
           navy some depth and motion. Sized in viewport units so they scale up
           with the screen instead of staying small on wide monitors. */}
       <motion.div
-        className="absolute top-0 right-0 w-[70vw] h-[70vw] max-w-[900px] max-h-[900px] rounded-full bg-sky-500/15 blur-[110px] -mt-[18vw] -mr-[18vw] hidden md:block"
+        className="absolute top-0 right-0 w-[70vw] h-[70vw] max-w-[900px] max-h-[900px] rounded-full bg-cyan-500/15 blur-[110px] -mt-[18vw] -mr-[18vw] hidden md:block"
         animate={{ scale: [1, 1.15, 1], opacity: [0.55, 0.9, 0.55] }}
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute bottom-0 left-0 w-[60vw] h-[60vw] max-w-[780px] max-h-[780px] rounded-full bg-sky-400/12 blur-[110px] -mb-[20vw] -ml-[16vw] hidden md:block"
+        className="absolute bottom-0 left-0 w-[60vw] h-[60vw] max-w-[780px] max-h-[780px] rounded-full bg-cyan-400/12 blur-[110px] -mb-[20vw] -ml-[16vw] hidden md:block"
         animate={{ y: [0, -40, 0], x: [0, -18, 0], scale: [1, 1.08, 1] }}
         transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
       />
@@ -177,7 +177,7 @@ export default function Hero() {
             </motion.div>
 
             <motion.h2
-              className="mt-5 flex h-6 items-center justify-center md:justify-start text-sm sm:text-base uppercase tracking-[0.2em] font-semibold text-sky-400"
+              className="mt-5 flex h-6 items-center justify-center md:justify-start text-sm sm:text-base uppercase tracking-[0.2em] font-semibold text-cyan-400"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.1, duration: 0.6 }}
@@ -204,7 +204,7 @@ export default function Hero() {
             >
               <span className="block">Sohrab Ali Ansari</span>
               <motion.span
-                className="text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-sky-400"
+                className="text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-cyan-400"
                 animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
                 transition={{ duration: 5, repeat: Infinity, repeatType: 'reverse' }}
                 style={{ backgroundSize: '200% 200%', display: 'inline-block' }}
@@ -227,19 +227,19 @@ export default function Hero() {
             <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {[
                 {
-                  icon: <FaPhone className="text-sky-400 shrink-0" />,
+                  icon: <FaPhone className="text-cyan-400 shrink-0" />,
                   text: (
-                    <a href="tel:+919199770786" className="cursor-pointer hover:text-sky-300 transition-colors">
+                    <a href="tel:+919199770786" className="cursor-pointer hover:text-cyan-300 transition-colors">
                       +91-9199770786
                     </a>
                   ),
                 },
                 {
-                  icon: <FaEnvelope className="text-sky-400 shrink-0" />,
+                  icon: <FaEnvelope className="text-cyan-400 shrink-0" />,
                   text: (
                     <a
                       href="mailto:sohrabali180@gmail.com"
-                      className="cursor-pointer hover:text-sky-300 transition-colors break-all"
+                      className="cursor-pointer hover:text-cyan-300 transition-colors break-all"
                     >
                       sohrabali180@gmail.com
                     </a>
@@ -259,13 +259,13 @@ export default function Hero() {
                   ),
                 },
                 {
-                  icon: <FaMapMarkerAlt className="text-sky-400 shrink-0" />,
+                  icon: <FaMapMarkerAlt className="text-cyan-400 shrink-0" />,
                   text: <span>Gurgaon, Haryana</span>,
                 },
               ].map((item, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center gap-2.5 rounded-xl border border-sky-400/15 bg-[#12305f]/50 px-3 py-2.5 text-xs text-slate-200 backdrop-blur-sm transition-colors hover:border-sky-400/35 hover:bg-[#16386e]/60"
+                  className="flex items-center gap-2.5 rounded-xl border border-cyan-400/15 bg-[#12305f]/50 px-3 py-2.5 text-xs text-slate-200 backdrop-blur-sm transition-colors hover:border-cyan-400/35 hover:bg-[#16386e]/60"
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
@@ -285,8 +285,8 @@ export default function Hero() {
             >
               <motion.a
                 href="#projects"
-                className="px-6 py-3 bg-gradient-to-r from-sky-500 to-sky-600 text-white font-semibold rounded-xl shadow-lg shadow-sky-500/20 flex items-center gap-2 text-sm sm:text-base"
-                whileHover={{ scale: 1.03, boxShadow: '0 12px 28px -8px rgba(56,189,248,0.45)' }}
+                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-semibold rounded-xl shadow-lg shadow-cyan-500/20 flex items-center gap-2 text-sm sm:text-base"
+                whileHover={{ scale: 1.03, boxShadow: '0 12px 28px -8px rgba(34, 211, 238,0.45)' }}
                 whileTap={{ scale: 0.96 }}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -297,7 +297,7 @@ export default function Hero() {
 
               <motion.a
                 href="#contact"
-                className="px-6 py-3 border border-sky-400/50 text-sky-300 rounded-xl flex items-center gap-2 text-sm sm:text-base transition-colors hover:bg-sky-400/10 hover:border-sky-400"
+                className="px-6 py-3 border border-cyan-400/50 text-cyan-300 rounded-xl flex items-center gap-2 text-sm sm:text-base transition-colors hover:bg-cyan-400/10 hover:border-cyan-400"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.96 }}
               >
@@ -313,7 +313,7 @@ export default function Hero() {
                   href="https://www.linkedin.com/in/sohrabalitech/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl border border-sky-400/15 bg-[#12305f]/50 text-sky-400 transition-colors hover:bg-sky-400 hover:text-[#0b1e3d]"
+                  className="p-3 rounded-xl border border-cyan-400/15 bg-[#12305f]/50 text-cyan-400 transition-colors hover:bg-cyan-400 hover:text-[#0b1e3d]"
                   whileHover={{ scale: 1.08, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label="LinkedIn"
@@ -324,7 +324,7 @@ export default function Hero() {
                   href="https://github.com/sohrab180"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl border border-sky-400/15 bg-[#12305f]/50 text-sky-400 transition-colors hover:bg-sky-400 hover:text-[#0b1e3d]"
+                  className="p-3 rounded-xl border border-cyan-400/15 bg-[#12305f]/50 text-cyan-400 transition-colors hover:bg-cyan-400 hover:text-[#0b1e3d]"
                   whileHover={{ scale: 1.08, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label="GitHub"
@@ -355,11 +355,11 @@ export default function Hero() {
               {STATS.map((stat, index) => (
                 <motion.div
                   key={index}
-                  className="rounded-xl border border-sky-400/15 bg-[#12305f]/40 px-3 py-4 text-center backdrop-blur-sm"
-                  whileHover={{ y: -4, borderColor: 'rgba(56,189,248,0.4)' }}
+                  className="rounded-xl border border-cyan-400/15 bg-[#12305f]/40 px-3 py-4 text-center backdrop-blur-sm"
+                  whileHover={{ y: -4, borderColor: 'rgba(34, 211, 238,0.4)' }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
-                  <div className="text-xl sm:text-2xl font-bold text-sky-400">{stat.value}</div>
+                  <div className="text-xl sm:text-2xl font-bold text-cyan-400">{stat.value}</div>
                   <div className="mt-1 text-[11px] sm:text-xs text-slate-400 leading-snug">{stat.label}</div>
                 </motion.div>
               ))}
@@ -378,7 +378,7 @@ export default function Hero() {
           >
             <div className="relative w-[210px] h-[210px] sm:w-[265px] sm:h-[265px] md:w-[310px] md:h-[310px]">
               {/* Glow behind the portrait */}
-              <div className="absolute -inset-10 rounded-full bg-[radial-gradient(circle,rgba(56,189,248,0.25),transparent_65%)] blur-2xl" />
+              <div className="absolute -inset-10 rounded-full bg-[radial-gradient(circle,rgba(34, 211, 238,0.25),transparent_65%)] blur-2xl" />
 
               {/* Conic sweep — a rotating gradient ring that reads as a light
                   travelling around the portrait. */}
@@ -386,7 +386,7 @@ export default function Hero() {
                 className="absolute -inset-1.5 rounded-full opacity-70"
                 style={{
                   background:
-                    'conic-gradient(from 0deg, transparent 0deg, rgba(56,189,248,0.85) 70deg, rgba(52,211,153,0.55) 140deg, transparent 210deg)',
+                    'conic-gradient(from 0deg, transparent 0deg, rgba(34, 211, 238,0.85) 70deg, rgba(52,211,153,0.55) 140deg, transparent 210deg)',
                   WebkitMask: 'radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px))',
                   mask: 'radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px))',
                 }}
@@ -396,16 +396,16 @@ export default function Hero() {
 
               {/* Slowly rotating accent ring */}
               <motion.div
-                className="absolute -inset-5 rounded-full border border-dashed border-sky-400/25"
+                className="absolute -inset-5 rounded-full border border-dashed border-cyan-400/25"
                 animate={{ rotate: -360 }}
                 transition={{ duration: 45, repeat: Infinity, ease: 'linear' }}
               />
 
               <motion.div
-                className="relative w-full h-full rounded-full overflow-hidden border-4 border-sky-400/40 shadow-2xl shadow-sky-900/50"
+                className="relative w-full h-full rounded-full overflow-hidden border-4 border-cyan-400/40 shadow-2xl shadow-cyan-900/50"
                 whileHover={{ rotate: [0, 2, -2, 0], transition: { duration: 0.5 } }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-sky-300/20 to-sky-500/20" />
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-300/20 to-cyan-500/20" />
                 <Image
                   src="/img/sohrab.png"
                   alt="Sohrab Ali Ansari — Full Stack Developer"
@@ -418,11 +418,11 @@ export default function Hero() {
 
               {/* Experience badge */}
               <motion.div
-                className="absolute -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 z-20 rounded-full border-2 border-sky-400 bg-[#0b1e3d] p-2 sm:p-2.5 shadow-lg"
+                className="absolute -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 z-20 rounded-full border-2 border-cyan-400 bg-[#0b1e3d] p-2 sm:p-2.5 shadow-lg"
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               >
-                <div className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-gradient-to-r from-sky-400 to-sky-500">
+                <div className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-cyan-500">
                   <span className="text-sm sm:text-base font-bold text-[#0b1e3d]">5.6+</span>
                 </div>
               </motion.div>
@@ -451,7 +451,7 @@ export default function Hero() {
                     style={{ left: `${left}%`, top: `${top}%` }}
                   >
                     <motion.div
-                      className="whitespace-nowrap rounded-full border border-sky-400/40 bg-[#0e2450]/90 px-2.5 py-1 text-[10px] sm:text-xs font-semibold text-sky-300 shadow-lg backdrop-blur-sm"
+                      className="whitespace-nowrap rounded-full border border-cyan-400/40 bg-[#0e2450]/90 px-2.5 py-1 text-[10px] sm:text-xs font-semibold text-cyan-300 shadow-lg backdrop-blur-sm"
                       animate={{ y: [0, -8, 0] }}
                       transition={{
                         duration: 3 + index * 0.4,

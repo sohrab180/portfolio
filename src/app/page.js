@@ -11,7 +11,7 @@ import Contact from '@/app/components/Contact';
 import Footer from '@/app/components/Footer';
 import Chatbot from '@/app/components/Chatbot';
 
-const SECTION_BASE = 'py-20 px-4 sm:px-6 md:px-8 border-t border-sky-400/10';
+const SECTION_BASE = 'py-20 px-4 sm:px-6 md:px-8 border-t border-cyan-400/10';
 const SECTION_LIGHT = `${SECTION_BASE} bg-[#102a52]`;
 const SECTION_DARK = `${SECTION_BASE} bg-[#0b1e3d]`;
 

@@ -44,6 +44,19 @@ export default function Projects() {
       ]
     },
     {
+      title: "Thesis Likho",
+      description: "Thesis and dissertation writing assistance platform connecting scholars with subject-matter experts",
+      url: "https://www.thesislikho.com",
+      github: "",
+      technologies: ["Angular", "Next.js", "Node.js", "MongoDB", "AWS-S3"],
+      features: [
+        "Expert-matched thesis and dissertation writing support",
+        "Chapter-wise progress tracking and revisions",
+        "Plagiarism checking and formatting assistance",
+        "Secure document upload and delivery"
+      ]
+    },
+    {
       title: "PearlCraft",
       description: "E-commerce platform for pearl jewelry",
       url: "http://mypearlcraft.com",
@@ -94,6 +107,19 @@ export default function Projects() {
         "Route optimization",
         "Rating and review system"
       ]
+    },
+    {
+      title: "Make House",
+      description: "MakeHouse transforms your vision into landmark spaces. From architectural blueprints to premium interiors — every detail crafted for the way you live.",
+      url: "https://makehouse.in",
+      github: "",
+      technologies: ["Next.js", "Node.js", "Express", "MongoDB"],
+      features: [
+        "Architectural blueprint and design showcase",
+        "Interior design portfolio gallery",
+        "Project inquiry and consultation booking",
+        "Client testimonials and case studies"
+      ]
     }
   ];
 
@@ -106,10 +132,10 @@ export default function Projects() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          My <span className="text-sky-400">Projects</span>
+          My <span className="text-cyan-400">Projects</span>
         </motion.h2>
         <motion.div 
-          className="w-20 h-1 bg-sky-500 mx-auto"
+          className="w-20 h-1 bg-cyan-500 mx-auto"
           initial={{ width: 0 }}
           animate={{ width: 80 }}
           transition={{ delay: 0.2, duration: 0.5 }}
@@ -120,7 +146,7 @@ export default function Projects() {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="bg-[#12305f]/50 rounded-xl overflow-hidden border border-sky-400/15 hover:border-sky-500/50 transition-all duration-300"
+            className="bg-[#12305f]/50 rounded-xl overflow-hidden border border-cyan-400/15 hover:border-cyan-500/50 transition-all duration-300"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
@@ -131,12 +157,12 @@ export default function Projects() {
                 <h3 className="text-xl font-bold text-white">{project.title}</h3>
                 <div className="flex space-x-2">
                   {project.url && (
-                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-sky-500 hover:text-sky-400">
+                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-cyan-500 hover:text-cyan-400">
                       <FaExternalLinkAlt />
                     </a>
                   )}
                   {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-sky-500 hover:text-sky-400">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-cyan-500 hover:text-cyan-400">
                       <FaGithub />
                     </a>
                   )}
@@ -147,14 +173,14 @@ export default function Projects() {
               
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.technologies.map((tech, techIndex) => (
-                  <span key={techIndex} className="px-3 py-1 bg-[#0e2450]/60 text-sky-300 text-xs rounded-full">
+                  <span key={techIndex} className="px-3 py-1 bg-[#0e2450]/60 text-cyan-300 text-xs rounded-full">
                     {tech}
                   </span>
                 ))}
               </div>
               
               <div className="mt-4">
-                <h4 className="text-sm font-semibold text-sky-400 mb-2">Key Features:</h4>
+                <h4 className="text-sm font-semibold text-cyan-400 mb-2">Key Features:</h4>
                 <ul className="space-y-2">
                   {project.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">

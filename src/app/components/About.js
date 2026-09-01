@@ -32,10 +32,10 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          About <span className="text-sky-400">Me</span>
+          About <span className="text-cyan-400">Me</span>
         </motion.h2>
         <motion.div 
-          className="w-20 h-1 bg-sky-500 mx-auto"
+          className="w-20 h-1 bg-cyan-500 mx-auto"
           initial={{ width: 0 }}
           animate={{ width: 80 }}
           transition={{ delay: 0.2, duration: 0.5 }}
@@ -62,35 +62,35 @@ export default function About() {
           
           <motion.div className="grid grid-cols-2 gap-4" variants={item}>
             <div className="flex items-center">
-              <div className="w-3 h-3 bg-sky-500 rounded-full mr-3"></div>
+              <div className="w-3 h-3 bg-cyan-500 rounded-full mr-3"></div>
               <span className="text-slate-300">Angular (v9-19)</span>
             </div>
             <div className="flex items-center">
-              <div className="w-3 h-3 bg-sky-500 rounded-full mr-3"></div>
+              <div className="w-3 h-3 bg-cyan-500 rounded-full mr-3"></div>
               <span className="text-slate-300">Node.js & Express</span>
             </div>
             <div className="flex items-center">
-              <div className="w-3 h-3 bg-sky-500 rounded-full mr-3"></div>
+              <div className="w-3 h-3 bg-cyan-500 rounded-full mr-3"></div>
               <span className="text-slate-300">MongoDB</span>
             </div>
             <div className="flex items-center">
-              <div className="w-3 h-3 bg-sky-500 rounded-full mr-3"></div>
+              <div className="w-3 h-3 bg-cyan-500 rounded-full mr-3"></div>
               <span className="text-slate-300">Next.js</span>
             </div>
              <div className="flex items-center">
-              <div className="w-3 h-3 bg-sky-500 rounded-full mr-3"></div>
+              <div className="w-3 h-3 bg-cyan-500 rounded-full mr-3"></div>
               <span className="text-slate-300">AWS-S3</span>
             </div>
              <div className="flex items-center">
-              <div className="w-3 h-3 bg-sky-500 rounded-full mr-3"></div>
+              <div className="w-3 h-3 bg-cyan-500 rounded-full mr-3"></div>
               <span className="text-slate-300">Git</span>
             </div>
              <div className="flex items-center">
-              <div className="w-3 h-3 bg-sky-500 rounded-full mr-3"></div>
+              <div className="w-3 h-3 bg-cyan-500 rounded-full mr-3"></div>
               <span className="text-slate-300">AI Automation</span>
             </div>
              <div className="flex items-center">
-              <div className="w-3 h-3 bg-sky-500 rounded-full mr-3"></div>
+              <div className="w-3 h-3 bg-cyan-500 rounded-full mr-3"></div>
               <span className="text-slate-300">Prompt Engineering</span>
             </div>
           </motion.div>
@@ -100,14 +100,14 @@ export default function About() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="bg-[#12305f]/50 p-8 rounded-xl border border-sky-400/15"
+          className="bg-[#12305f]/50 p-8 rounded-xl border border-cyan-400/15"
         >
           <h3 className="text-2xl font-bold text-white mb-6">Education</h3>
           
           <div className="mb-6">
             <div className="flex justify-between items-start mb-2">
-              <h4 className="text-xl font-semibold text-sky-400">M.R.S.P.T.U, Bathinda, Punjab</h4>
-              <span className="text-sky-400">2016 - 2020</span>
+              <h4 className="text-xl font-semibold text-cyan-400">M.R.S.P.T.U, Bathinda, Punjab</h4>
+              <span className="text-cyan-400">2016 - 2020</span>
             </div>
             <p className="text-slate-300 font-medium">B.Tech in Computer Science</p>
             <p className="text-slate-400 mt-2">CGPA: 7.8</p>

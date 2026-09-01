@@ -55,8 +55,8 @@ export default function Navbar({ activeSection = 'home' }) {
               href={`#${item.id}`} 
               className={`px-3 py-2 sm:px-4 sm:py-2.5 transition-all duration-300 font-medium relative rounded-lg
                 ${activeSection === item.id 
-                  ? 'text-sky-600 bg-sky-50' 
-                  : 'text-gray-600 hover:text-sky-600 hover:bg-sky-50/60'}`}
+                  ? 'text-cyan-600 bg-cyan-50' 
+                  : 'text-gray-600 hover:text-cyan-600 hover:bg-cyan-50/60'}`}
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick(item.id);
@@ -65,7 +65,7 @@ export default function Navbar({ activeSection = 'home' }) {
               {item.label}
               {activeSection === item.id && (
                 <motion.span 
-                  className="absolute bottom-0 left-1/4 w-1/2 h-0.5 bg-sky-500"
+                  className="absolute bottom-0 left-1/4 w-1/2 h-0.5 bg-cyan-500"
                   initial={{ width: 0 }}
                   animate={{ width: '50%' }}
                   transition={{ duration: 0.3 }}
@@ -77,7 +77,7 @@ export default function Navbar({ activeSection = 'home' }) {
           <a 
             href="/resume/Sohrab_Ali_Ansari.pdf" 
             target="_blank"
-            className="ml-3 px-4 py-2.5 bg-sky-500 text-white font-bold rounded-lg hover:bg-sky-600 hover:shadow-lg hover:shadow-sky-500/30 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2 text-sm sm:text-base"
+            className="ml-3 px-4 py-2.5 bg-cyan-500 text-white font-bold rounded-lg hover:bg-cyan-600 hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2 text-sm sm:text-base"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -88,12 +88,12 @@ export default function Navbar({ activeSection = 'home' }) {
         
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden p-2 rounded-lg hover:bg-sky-50 transition-colors duration-200"
+          className="md:hidden p-2 rounded-lg hover:bg-cyan-50 transition-colors duration-200"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMenuOpen ? (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           ) : (
@@ -119,8 +119,8 @@ export default function Navbar({ activeSection = 'home' }) {
                   href={`#${item.id}`} 
                   className={`py-2.5 px-4 transition-colors duration-300 font-medium rounded-lg
                     ${activeSection === item.id 
-                      ? 'text-sky-600 bg-sky-50' 
-                      : 'text-gray-600 hover:text-sky-600 hover:bg-sky-50/60'}`}
+                      ? 'text-cyan-600 bg-cyan-50' 
+                      : 'text-gray-600 hover:text-cyan-600 hover:bg-cyan-50/60'}`}
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavClick(item.id);
@@ -133,7 +133,7 @@ export default function Navbar({ activeSection = 'home' }) {
               <a 
                 href="/resume/Sohrab_Ali_Ansari.pdf"  
                 target="_blank"
-                className="mt-2 w-full px-4 py-2.5 bg-sky-500 text-white font-bold rounded-lg hover:bg-sky-600 hover:shadow-lg hover:shadow-sky-500/30 transition-all duration-300 text-center flex items-center justify-center gap-2 text-sm"
+                className="mt-2 w-full px-4 py-2.5 bg-cyan-500 text-white font-bold rounded-lg hover:bg-cyan-600 hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 text-center flex items-center justify-center gap-2 text-sm"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
