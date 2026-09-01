@@ -1,7 +1,12 @@
-// src/components/Contact.js
+"use client";
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
+
+// wa.me needs the number in full international form, digits only.
+const WHATSAPP_URL =
+  'https://wa.me/919199770786?text=' +
+  encodeURIComponent("Hi Sohrab, I found your portfolio and I'd like to connect.");
 import Swal from 'sweetalert2'; // ✅ Add this
 
 export default function Contact() {
@@ -43,7 +48,7 @@ export default function Contact() {
           icon: 'success',
           title: 'Message Sent!',
           text: "Thanks for reaching out. I'll get back to you soon.",
-          confirmButtonColor: '#f59e0b'
+          confirmButtonColor: '#0ea5e9'
         });
       } else {
         Swal.fire({ icon: 'error', title: 'Oops!', text: 'Something went wrong. Please try again.' });
@@ -64,13 +69,13 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}>
-          Get In <span className="text-amber-400">Touch</span>
+          Get In <span className="text-sky-400">Touch</span>
         </motion.h2>
-        <motion.div className="w-20 h-1 bg-amber-500 mx-auto"
+        <motion.div className="w-20 h-1 bg-sky-500 mx-auto"
           initial={{ width: 0 }}
           animate={{ width: 80 }}
           transition={{ delay: 0.2, duration: 0.5 }} />
-        <motion.p className="text-gray-400 max-w-2xl mx-auto mt-6"
+        <motion.p className="text-slate-400 max-w-2xl mx-auto mt-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}>
@@ -83,22 +88,24 @@ export default function Contact() {
         <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
           <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
           <div className="space-y-6">
-            <InfoItem icon={<FaPhone />} title="Phone" value="+91-9199770786" />
-            <InfoItem icon={<FaEnvelope />} title="Email" value="alisohrab0555@gmail.com" />
+            <InfoItem icon={<FaPhone />} title="Phone" value="+91-9199770786" href="tel:+919199770786" />
+            <InfoItem icon={<FaEnvelope />} title="Email" value="sohrabali180@gmail.com" href="mailto:sohrabali180@gmail.com" />
+            <InfoItem icon={<FaWhatsapp />} title="WhatsApp" value="Chat on WhatsApp" href={WHATSAPP_URL} external accent />
             <InfoItem icon={<FaMapMarkerAlt />} title="Location" value="Gurgaon, Haryana, India" />
           </div>
           <div className="mt-10">
             <h3 className="text-2xl font-bold text-white mb-6">Connect With Me</h3>
             <div className="flex space-x-4">
-              <SocialIcon url="https://www.linkedin.com/in/developersohrabali/" icon={<FaLinkedin />} />
+              <SocialIcon url="https://www.linkedin.com/in/sohrabalitech/" icon={<FaLinkedin />} />
               <SocialIcon url="https://github.com/sohrab180" icon={<FaGithub />} />
+              <SocialIcon url={WHATSAPP_URL} icon={<FaWhatsapp />} accent />
             </div>
           </div>
         </motion.div>
 
         {/* Contact Form */}
         <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-          <div className="bg-gray-800/50 p-8 rounded-xl border border-gray-700">
+          <div className="bg-[#12305f]/50 p-8 rounded-xl border border-sky-400/15">
             <h3 className="text-2xl font-bold text-white mb-6">Send Me a Message</h3>
             <form onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -107,13 +114,13 @@ export default function Contact() {
               </div>
               <InputField label="Phone Number" name="phone" type="tel" value={formData.phone} onChange={handleChange} pattern="^\+?[0-9\s\-]{7,15}$" placeholder="+91 1234567890" />
               <div className="mb-6">
-                <label htmlFor="message" className="block text-gray-300 mb-2">Message</label>
+                <label htmlFor="message" className="block text-slate-300 mb-2">Message</label>
                 <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows="5"
-                  className="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full bg-[#0e2450]/60 border border-sky-400/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent"
                   placeholder="Type here..." required />
               </div>
               <motion.button type="submit"
-                className="w-full px-6 py-3.5 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 font-bold rounded-lg hover:shadow-lg hover:shadow-amber-500/30 transition-all duration-300"
+                className="w-full px-6 py-3.5 bg-gradient-to-r from-sky-500 to-sky-600 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-sky-500/30 transition-all duration-300"
                 whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
                 disabled={isSubmitting}>
                 {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -128,24 +135,48 @@ export default function Contact() {
 
 // ➕ Reusable Components
 
-function InfoItem({ icon, title, value }) {
+function InfoItem({ icon, title, value, href, external, accent }) {
+  const tone = accent ? 'text-emerald-400' : 'text-sky-500';
+  const hover = accent ? 'hover:text-emerald-400' : 'hover:text-sky-400';
+
   return (
     <div className="flex items-start">
-      <div className="bg-gray-800/50 p-3 rounded-full mr-4">{React.cloneElement(icon, { className: "text-amber-500 text-xl" })}</div>
+      <div className="bg-[#12305f]/50 p-3 rounded-full mr-4">
+        {React.cloneElement(icon, { className: `${tone} text-xl` })}
+      </div>
       <div>
         <h4 className="text-lg font-semibold text-white">{title}</h4>
-        <p className="text-gray-300">{value}</p>
+        {href ? (
+          <a
+            href={href}
+            {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            className={`text-slate-300 cursor-pointer transition-colors ${hover}`}
+          >
+            {value}
+          </a>
+        ) : (
+          <p className="text-slate-300">{value}</p>
+        )}
       </div>
     </div>
   );
 }
 
-function SocialIcon({ url, icon }) {
+function SocialIcon({ url, icon, accent }) {
   return (
-    <motion.a href={url} target="_blank"
-      className="bg-gray-800/50 p-4 rounded-full hover:bg-amber-500 transition-colors"
-      whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-      {React.cloneElement(icon, { className: "text-xl text-amber-400 hover:text-white" })}
+    <motion.a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`p-4 rounded-full cursor-pointer transition-colors ${
+        accent ? 'bg-emerald-400/10 border border-emerald-400/30 hover:bg-emerald-400/20' : 'bg-[#12305f]/50 hover:bg-sky-500'
+      }`}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      {React.cloneElement(icon, {
+        className: `text-xl ${accent ? 'text-emerald-300' : 'text-sky-400 hover:text-white'}`,
+      })}
     </motion.a>
   );
 }
@@ -153,14 +184,14 @@ function SocialIcon({ url, icon }) {
 function InputField({ label, name, type = "text", value, onChange, ...rest }) {
   return (
     <div className="mb-6">
-      <label htmlFor={name} className="block text-gray-300 mb-2">{label}</label>
+      <label htmlFor={name} className="block text-slate-300 mb-2">{label}</label>
       <input
         type={type}
         id={name}
         name={name}
         value={value}
         onChange={onChange}
-        className="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+        className="w-full bg-[#0e2450]/60 border border-sky-400/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent"
         required
         {...rest}
       />

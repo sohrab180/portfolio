@@ -1,114 +1,229 @@
-// src/components/Footer.js
+"use client";
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaArrowUp, FaWhatsapp } from 'react-icons/fa';
+
+// wa.me needs the number in full international form, digits only.
+const WHATSAPP_URL =
+  'https://wa.me/919199770786?text=' +
+  encodeURIComponent("Hi Sohrab, I found your portfolio and I'd like to connect.");
+
+const socialLinks = [
+  {
+    name: 'GitHub',
+    url: 'https://github.com/sohrab180',
+    icon: (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+      </svg>
+    ),
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/sohrabalitech/',
+    icon: (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+      </svg>
+    ),
+  },
+];
+
+const quickLinks = [
+  { id: 'home', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'contact', label: 'Contact' },
+];
+
+const expertise = ['Angular', 'Next.js', 'Node.js', 'Express.js', 'MongoDB', 'AWS', 'AI Automation'];
+
+const contactDetails = [
+  { icon: <FaEnvelope />, text: 'sohrabali180@gmail.com', href: 'mailto:sohrabali180@gmail.com' },
+  { icon: <FaPhone />, text: '+91-9199770786', href: 'tel:+919199770786' },
+  { icon: <FaWhatsapp />, text: 'Chat on WhatsApp', href: WHATSAPP_URL, external: true },
+  { icon: <FaMapMarkerAlt />, text: 'Gurgaon, Haryana, India', href: null },
+];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  
-  const socialLinks = [
-    {
-      name: "GitHub",
-      url: "https://github.com/sohrab180",
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-        </svg>
-      )
-    },
-    {
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/developersohrabali/",
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-        </svg>
-      )
-    },
-    {
-      name: "Twitter",
-      url: "https://twitter.com/",
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
-        </svg>
-      )
-    },
-    {
-      name: "Instagram",
-      url: "https://instagram.com/",
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-        </svg>
-      )
-    }
-  ];
+
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
-    <footer className="bg-gray-900 py-12 border-t border-gray-800">
-      <div className="container mx-auto px-6 max-w-7xl">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          {/* Branding */}
-          <motion.div 
+    <footer className="relative bg-[#071426] border-t border-sky-400/10 overflow-hidden">
+      {/* Ambient glows, one sky one emerald, to lift the flat dark panel */}
+      <div className="pointer-events-none absolute -top-24 left-1/4 h-64 w-64 rounded-full bg-sky-500/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-24 right-1/4 h-64 w-64 rounded-full bg-emerald-500/10 blur-3xl" />
+
+      <div className="relative container mx-auto max-w-7xl px-6 pt-16 pb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+          {/* Brand */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col items-center md:items-start"
+            className="sm:col-span-2 lg:col-span-1"
           >
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-gray-900 font-bold text-lg">SA</span>
-              </div>
-              <h1 className="text-xl font-bold text-white">
-                Sohrab Ali
-              </h1>
+            {/* The logo artwork is dark navy, so it needs a light plate to be
+                legible against the dark footer. */}
+            <div className="inline-block rounded-xl bg-white px-4 py-3 shadow-lg">
+              <Image src="/img/logo.png" alt="Sohrab Ali Ansari" width={132} height={78} className="h-12 w-auto" />
             </div>
-            <p className="text-gray-400 text-center md:text-left max-w-md">
-              Full Stack Developer specializing in MEAN stack and modern web technologies.
+            <p className="mt-4 text-slate-400 text-sm leading-relaxed max-w-xs">
+              Full Stack Developer specializing in the MEAN stack, Next.js and AI automation — building scalable
+              products end to end.
             </p>
+
+            {/* Availability status — green reads as "open / online" at a glance */}
+            <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1.5 text-xs font-medium text-emerald-300">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+              </span>
+              Available for work
+            </div>
           </motion.div>
-          
-          {/* Social Links */}
-          <motion.div 
+
+          {/* Quick links */}
+          <motion.nav
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex flex-col items-center md:items-end"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            aria-label="Footer"
           >
-            <h3 className="text-white font-medium mb-4">Connect with me</h3>
-            <div className="flex space-x-4">
-              {socialLinks.map((link, index) => (
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider">Quick Links</h3>
+            <span className="mt-2 block h-0.5 w-8 rounded-full bg-emerald-400" />
+            <ul className="mt-4 space-y-2.5">
+              {quickLinks.map((link) => (
+                <li key={link.id}>
+                  <a
+                    href={`#${link.id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(link.id);
+                    }}
+                    className="group inline-flex cursor-pointer items-center gap-2 text-sm text-slate-400 transition-colors hover:text-sky-400"
+                  >
+                    <span className="h-1 w-1 rounded-full bg-slate-600 transition-colors group-hover:bg-emerald-400" />
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.nav>
+
+          {/* Expertise */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider">Expertise</h3>
+            <span className="mt-2 block h-0.5 w-8 rounded-full bg-emerald-400" />
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {expertise.map((item) => (
+                <li
+                  key={item}
+                  className="rounded-full border border-sky-400/15 bg-[#12305f]/50 px-2.5 py-1 text-xs text-slate-300"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Contact */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+          >
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider">Get in Touch</h3>
+            <span className="mt-2 block h-0.5 w-8 rounded-full bg-emerald-400" />
+            <ul className="mt-4 space-y-3">
+              {contactDetails.map((item) => (
+                <li key={item.text} className="flex items-start gap-2.5 text-sm text-slate-400">
+                  <span className={`mt-0.5 shrink-0 ${item.external ? 'text-emerald-400' : 'text-sky-400'}`}>
+                    {item.icon}
+                  </span>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                      className={`cursor-pointer break-all transition-colors ${
+                        item.external ? 'hover:text-emerald-400' : 'hover:text-sky-400'
+                      }`}
+                    >
+                      {item.text}
+                    </a>
+                  ) : (
+                    <span>{item.text}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-5 flex items-center gap-3">
+              {socialLinks.map((link) => (
                 <motion.a
-                  key={index}
+                  key={link.name}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ y: -2 }}
+                  whileHover={{ y: -3 }}
                   whileTap={{ scale: 0.95 }}
-                  className="text-gray-400 hover:text-amber-400 transition-colors duration-300 p-2 rounded-full hover:bg-gray-800"
+                  className="cursor-pointer rounded-lg border border-sky-400/15 bg-[#12305f]/50 p-2.5 text-slate-300 transition-colors hover:border-sky-400/40 hover:text-sky-400"
                   aria-label={link.name}
                 >
                   {link.icon}
                 </motion.a>
               ))}
+
+              <motion.a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.95 }}
+                className="cursor-pointer rounded-lg border border-emerald-400/30 bg-emerald-400/10 p-2.5 text-emerald-300 transition-colors hover:bg-emerald-400/20"
+                aria-label="Message on WhatsApp"
+              >
+                <FaWhatsapp className="w-5 h-5" />
+              </motion.a>
             </div>
           </motion.div>
         </div>
-        
-        {/* Copyright */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-12 pt-8 border-t border-gray-800 text-center"
-        >
-          <p className="text-gray-400 text-sm">
-            © {currentYear} Sohrab Ali. All rights reserved.
+
+        {/* Bottom bar */}
+        <div className="mt-12 flex flex-col-reverse items-center gap-4 border-t border-sky-400/10 pt-6 sm:flex-row sm:justify-between">
+          <p className="text-slate-400 text-xs text-center sm:text-left">
+            © {currentYear} Sohrab Ali Ansari. All rights reserved.
           </p>
-          <p className="text-gray-500 text-xs mt-2">
-            Built with React, Next.js and Tailwind CSS
-          </p>
-        </motion.div>
+
+          <div className="flex items-center gap-4">
+            <p className="text-slate-500 text-xs">Built with Next.js &amp; Tailwind CSS</p>
+            <motion.button
+              type="button"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.95 }}
+              className="rounded-lg border border-emerald-400/30 bg-emerald-400/10 p-2 text-emerald-300 transition-colors hover:bg-emerald-400/20"
+              aria-label="Back to top"
+            >
+              <FaArrowUp className="h-3.5 w-3.5" />
+            </motion.button>
+          </div>
+        </div>
       </div>
     </footer>
   );

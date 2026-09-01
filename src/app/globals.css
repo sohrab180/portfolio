@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
+/* The site is dark navy in both OS themes, so the page background is a fixed
+   navy rather than white — otherwise overscroll (and any area the layout
+   doesn't cover) flashes white behind the dark content. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b1e3d;
+  --foreground: #e2e8f0;
 }
 
 @theme inline {
@@ -14,8 +17,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #071426;
+    --foreground: #e2e8f0;
   }
 }
 
@@ -23,6 +26,30 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-    position: static !important;
+}
+
+/* Hero: floating code snippets.
+   Hero.js appends these with inline left/top/opacity/transform, which only
+   take effect once the element is positioned — without this rule they
+   stacked in normal flow instead of scattering across the background. */
+.floating-code {
+  position: absolute;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: #7cb0ff;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  transition: transform 0.35s ease-out;
+}
+
+/* Hero: blueprint grid, masked so it dissolves toward the edges instead of
+   stopping at a hard line. */
+.hero-grid {
+  background-image:
+    linear-gradient(to right, rgba(56, 189, 248, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+  background-size: 90px 90px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 40%, transparent 100%);
 }
 

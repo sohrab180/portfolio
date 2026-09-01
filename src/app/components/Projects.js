@@ -1,4 +1,3 @@
-// src/components/Projects.js
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
@@ -23,7 +22,7 @@ export default function Projects() {
       description: "Career-focused training portal offering internships and courses",
       url: "https://www.prayug.com",
       github: "",
-      technologies: ["Angular", "Node.js", "MongoDB", "Express"],
+      technologies: ["Next.js","Angular", "Node.js", "MongoDB", "Express"],
       features: [
         "Course listing and enrollment system",
         "Student and instructor dashboards",
@@ -36,7 +35,7 @@ export default function Projects() {
       description: "AI-powered platform offering Ph.D. support including thesis and research guidance",
       url: "https://www.anushram.com",
       github: "",
-      technologies: ["Angular", "Node.js", "MongoDB", "AWS-S3"],
+      technologies: ["Angular","Next.js", "Node.js", "MongoDB", "AWS-S3"],
       features: [
         "Research engine for scientific insights",
         "Document submission and tracking",
@@ -49,7 +48,7 @@ export default function Projects() {
       description: "E-commerce platform for pearl jewelry",
       url: "http://mypearlcraft.com",
       github: "",
-      technologies: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
+      technologies: ["PHP", "Tailwind CSS", "Node.js", "MongoDB"],
       features: [
         "Product catalog with filters",
         "Shopping cart and checkout",
@@ -62,7 +61,7 @@ export default function Projects() {
       description: "Cab booking service platform",
       url: "http://mytriptaxi.com",
       github: "",
-      technologies: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
+      technologies: ["PHP", "Tailwind CSS", "Node.js", "MongoDB"],
       features: [
         "Real-time cab booking",
         "Fare estimation",
@@ -75,7 +74,20 @@ export default function Projects() {
       description: "Cab booking service platform",
       url: "https://rodway.in",
       github: "",
-      technologies: ["Angular", "Node.js", "Express", "MongoDB"],
+      technologies: ["PHP","Tailwind CSS", "Node.js", "Express", "MongoDB"],
+      features: [
+        "Ride scheduling",
+        "Multiple vehicle options",
+        "Route optimization",
+        "Rating and review system"
+      ]
+    },
+    {
+      title: "Patna Taxi",
+      description: "Cab booking service platform for the Patna region",
+      url: "https://patnataxi.com",
+      github: "",
+      technologies: ["PHP", "Node.js", "Express", "MongoDB"],
       features: [
         "Ride scheduling",
         "Multiple vehicle options",
@@ -94,10 +106,10 @@ export default function Projects() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          My <span className="text-amber-400">Projects</span>
+          My <span className="text-sky-400">Projects</span>
         </motion.h2>
         <motion.div 
-          className="w-20 h-1 bg-amber-500 mx-auto"
+          className="w-20 h-1 bg-sky-500 mx-auto"
           initial={{ width: 0 }}
           animate={{ width: 80 }}
           transition={{ delay: 0.2, duration: 0.5 }}
@@ -108,7 +120,7 @@ export default function Projects() {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-amber-500/50 transition-all duration-300"
+            className="bg-[#12305f]/50 rounded-xl overflow-hidden border border-sky-400/15 hover:border-sky-500/50 transition-all duration-300"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
@@ -119,37 +131,37 @@ export default function Projects() {
                 <h3 className="text-xl font-bold text-white">{project.title}</h3>
                 <div className="flex space-x-2">
                   {project.url && (
-                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-amber-500 hover:text-amber-400">
+                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-sky-500 hover:text-sky-400">
                       <FaExternalLinkAlt />
                     </a>
                   )}
                   {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-amber-500 hover:text-amber-400">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-sky-500 hover:text-sky-400">
                       <FaGithub />
                     </a>
                   )}
                 </div>
               </div>
               
-              <p className="text-gray-300 mb-4">{project.description}</p>
+              <p className="text-slate-300 mb-4">{project.description}</p>
               
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.technologies.map((tech, techIndex) => (
-                  <span key={techIndex} className="px-3 py-1 bg-gray-700/50 text-amber-300 text-xs rounded-full">
+                  <span key={techIndex} className="px-3 py-1 bg-[#0e2450]/60 text-sky-300 text-xs rounded-full">
                     {tech}
                   </span>
                 ))}
               </div>
               
               <div className="mt-4">
-                <h4 className="text-sm font-semibold text-amber-400 mb-2">Key Features:</h4>
+                <h4 className="text-sm font-semibold text-sky-400 mb-2">Key Features:</h4>
                 <ul className="space-y-2">
                   {project.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
-                      <svg className="w-4 h-4 text-amber-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <svg className="w-4 h-4 text-emerald-400 mr-2 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="text-gray-300 text-sm">{feature}</span>
+                      <span className="text-slate-300 text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>

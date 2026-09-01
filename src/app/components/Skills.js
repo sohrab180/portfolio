@@ -1,4 +1,3 @@
-// src/components/Skills.js
 import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -75,15 +74,22 @@ export default function Skills() {
       { name: 'Performance Optimization', level: 88 },
       { name: 'Testing', level: 85 },
       { name: 'Deployment', level: 90 },
+    ],
+    ai: [
+      { name: 'AI Automation', level: 85 },
+      { name: 'Prompt Engineering', level: 88 },
+      { name: 'LLM API Integration (OpenAI/Gemini)', level: 82 },
+      { name: 'AI Chatbot Development', level: 85 },
+      { name: 'Workflow Automation', level: 80 },
+      { name: 'RAG / Context-Aware Responses', level: 75 },
     ]
   };
 
+  // The <section>, its id and its background live in page.js — this used to
+  // render a second element with id="skills", so the document had two nodes
+  // sharing that id and anchor/scroll-spy lookups hit the wrong one.
   return (
-    <section 
-      id="skills" 
-      className="py-16 md:py-20 px-4 sm:px-6 bg-gray-900/50"
-      ref={ref}
-    >
+    <div ref={ref}>
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <motion.h2 
@@ -96,10 +102,10 @@ export default function Skills() {
             }}
             transition={{ duration: 0.5 }}
           >
-            Technical <span className="text-amber-400">Skills</span>
+            Technical <span className="text-sky-400">Skills</span>
           </motion.h2>
           <motion.div 
-            className="w-20 h-1 bg-gradient-to-r from-amber-500 to-amber-600 mx-auto rounded-full"
+            className="w-20 h-1 bg-gradient-to-r from-sky-500 to-sky-600 mx-auto rounded-full"
             initial={{ width: 0 }}
             animate={controls}
             variants={{
@@ -109,7 +115,7 @@ export default function Skills() {
             transition={{ delay: 0.2, duration: 0.5 }}
           />
           <motion.p 
-            className="mt-6 text-gray-300 max-w-2xl mx-auto"
+            className="mt-6 text-slate-300 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={controls}
             variants={{
@@ -118,7 +124,7 @@ export default function Skills() {
             }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            With 4+ years of development experience, I&apos;ve mastered technologies that enable me to build complete, scalable web applications.
+            With 5.6+ years of development experience, I&apos;ve mastered technologies that enable me to build complete, scalable web applications.
           </motion.p>
         </div>
         
@@ -127,16 +133,18 @@ export default function Skills() {
           {Object.keys(skillsData).map((category) => (
             <motion.button
               key={category}
-              className={`px-5 py-2.5 rounded-full font-medium transition-all duration-300 capitalize ${
+              className={`px-5 py-2.5 rounded-full font-medium transition-all duration-300 ${
+                category === 'ai' ? '' : 'capitalize'
+              } ${
                 activeTab === category
-                  ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900'
-                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                  ? 'bg-gradient-to-r from-sky-500 to-sky-600 text-white'
+                  : 'bg-[#12305f] text-slate-300 hover:bg-[#16386e]'
               }`}
               onClick={() => setActiveTab(category)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {category}
+              {category === 'ai' ? 'AI' : category}
             </motion.button>
           ))}
         </div>
@@ -152,12 +160,12 @@ export default function Skills() {
             {skillsData[activeTab].slice(0, Math.ceil(skillsData[activeTab].length / 2)).map((skill, index) => (
               <motion.div key={index} variants={item}>
                 <div className="flex justify-between mb-2">
-                  <span className="font-medium text-gray-300">{skill.name}</span>
-                  <span className="text-amber-500 font-bold">{skill.level}%</span>
+                  <span className="font-medium text-slate-300">{skill.name}</span>
+                  <span className="text-sky-500 font-bold">{skill.level}%</span>
                 </div>
-                <div className="w-full bg-gray-800 rounded-full h-2.5">
+                <div className="w-full bg-[#12305f] rounded-full h-2.5">
                   <motion.div 
-                    className="bg-gradient-to-r from-amber-500 to-amber-600 h-2.5 rounded-full" 
+                    className="bg-gradient-to-r from-sky-500 to-sky-600 h-2.5 rounded-full" 
                     initial={{ width: 0 }}
                     animate={{ width: `${skill.level}%` }}
                     transition={{ duration: 1, delay: 0.2 + index * 0.1 }}
@@ -171,12 +179,12 @@ export default function Skills() {
             {skillsData[activeTab].slice(Math.ceil(skillsData[activeTab].length / 2)).map((skill, index) => (
               <motion.div key={index} variants={item}>
                 <div className="flex justify-between mb-2">
-                  <span className="font-medium text-gray-300">{skill.name}</span>
-                  <span className="text-amber-500 font-bold">{skill.level}%</span>
+                  <span className="font-medium text-slate-300">{skill.name}</span>
+                  <span className="text-sky-500 font-bold">{skill.level}%</span>
                 </div>
-                <div className="w-full bg-gray-800 rounded-full h-2.5">
+                <div className="w-full bg-[#12305f] rounded-full h-2.5">
                   <motion.div 
-                    className="bg-gradient-to-r from-amber-500 to-amber-600 h-2.5 rounded-full" 
+                    className="bg-gradient-to-r from-sky-500 to-sky-600 h-2.5 rounded-full" 
                     initial={{ width: 0 }}
                     animate={{ width: `${skill.level}%` }}
                     transition={{ duration: 1, delay: 0.2 + (index + Math.ceil(skillsData[activeTab].length / 2)) * 0.1 }}
@@ -189,7 +197,7 @@ export default function Skills() {
         
         {/* Development Approach */}
         <motion.div 
-          className="mt-12 bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-amber-500/20 backdrop-blur-sm"
+          className="mt-12 bg-gradient-to-br from-[#12305f] to-[#0b1e3d] p-6 rounded-xl border border-sky-500/20 backdrop-blur-sm"
           initial={{ opacity: 0, y: 30 }}
           animate={controls}
           variants={{
@@ -199,21 +207,21 @@ export default function Skills() {
           transition={{ delay: 0.5, duration: 0.5 }}
         >
           <h3 className="text-xl md:text-2xl font-bold text-white mb-4 flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-amber-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-sky-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
             </svg>
             Development Approach
           </h3>
-          <p className="text-gray-300 mb-4">
+          <p className="text-slate-300 mb-4">
             I specialize in creating full-stack applications using the MEAN stack, focusing on clean architecture, 
             reusable components, and efficient APIs. My development process emphasizes performance optimization, 
             accessibility compliance, and responsive design.
           </p>
           <div className="flex flex-wrap gap-2">
-            {['Component-Based Architecture', 'RESTful APIs', 'JWT Authentication', 'AWS Integration', 'CI/CD', 'Responsive Design', 'Performance Optimization', 'Cross-Browser Compatibility'].map((item, index) => (
+            {['Component-Based Architecture', 'RESTful APIs', 'JWT Authentication', 'AWS Integration', 'CI/CD', 'Responsive Design', 'Performance Optimization', 'Cross-Browser Compatibility', 'AI Automation', 'Prompt Engineering'].map((item, index) => (
               <motion.span 
                 key={index}
-                className="px-3 py-1.5 bg-amber-900/30 text-amber-300 rounded-full text-sm"
+                className="px-3 py-1.5 bg-sky-900/30 text-sky-300 rounded-full text-sm"
                 initial={{ opacity: 0 }}
                 animate={controls}
                 variants={{
@@ -228,6 +236,6 @@ export default function Skills() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 }

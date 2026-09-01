@@ -9,7 +9,11 @@ import Experience from '@/app/components/Experience';
 import Projects from '@/app/components/Projects';
 import Contact from '@/app/components/Contact';
 import Footer from '@/app/components/Footer';
-import { motion } from 'framer-motion';
+import Chatbot from '@/app/components/Chatbot';
+
+const SECTION_BASE = 'py-20 px-4 sm:px-6 md:px-8 border-t border-sky-400/10';
+const SECTION_LIGHT = `${SECTION_BASE} bg-[#102a52]`;
+const SECTION_DARK = `${SECTION_BASE} bg-[#0b1e3d]`;
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home');
@@ -50,57 +54,61 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-950 text-gray-300">
+    <div className="min-h-screen bg-[#0b1e3d] text-slate-300">
       <Navbar activeSection={activeSection} />
       <main>
-        <section 
-          id="home" 
+        <section
+          id="home"
           ref={(el) => registerSection('home', el)}
         >
           <Hero />
         </section>
-        
-        <section 
-          id="about" 
+
+        {/* Sections alternate between two navy tones (with a hairline sky
+            divider) so each one reads as a distinct band rather than one
+            continuous background. */}
+        <section
+          id="about"
           ref={(el) => registerSection('about', el)}
-          className="py-16 px-4 sm:px-6 md:px-8"
+          className={SECTION_LIGHT}
         >
           <About />
         </section>
-        
-        <section 
-          id="skills" 
+
+        <section
+          id="skills"
           ref={(el) => registerSection('skills', el)}
-          className="py-16 px-4 sm:px-6 md:px-8 bg-gray-900/50"
+          className={SECTION_DARK}
         >
           <Skills />
         </section>
-        
-      <section 
-  id="experience" 
-  ref={(el) => registerSection('experience', el)}
-  className="min-h-screen py-16 px-4 sm:px-6 md:px-8" // Added min-h-screen
->
-  <Experience />
-</section>
-        
-        <section 
-          id="projects" 
+
+        <section
+          id="experience"
+          ref={(el) => registerSection('experience', el)}
+          className={SECTION_LIGHT}
+        >
+          <Experience />
+        </section>
+
+        <section
+          id="projects"
           ref={(el) => registerSection('projects', el)}
-          className="py-16 px-4 sm:px-6 md:px-8 bg-gray-900/50"
+          className={SECTION_DARK}
         >
           <Projects />
         </section>
-        
-        <section 
-          id="contact" 
+
+        <section
+          id="contact"
           ref={(el) => registerSection('contact', el)}
-          className="py-16 px-4 sm:px-6 md:px-8"
+          className={SECTION_LIGHT}
         >
           <Contact />
         </section>
       </main>
       <Footer />
+      <Chatbot />
     </div>
   );
 }
