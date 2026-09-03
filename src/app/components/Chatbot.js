@@ -7,7 +7,7 @@ import { FaCommentDots, FaTimes, FaPaperPlane, FaRobot } from 'react-icons/fa';
 // backend at D:\Tracking-App\backend (mounted at /api/portfolio there —
 // see src/portfolio/portfolio.app.js). Override via .env.local for
 // production (see .env.local.example).
-const CHAT_API_BASE = process.env.NEXT_PUBLIC_CHATBOT_API_URL || 'http://localhost:4000/api/portfolio';
+const CHAT_API_BASE = process.env.NEXT_PUBLIC_CHATBOT_API_URL || 'https://cardbanao.com/api/portfolio';
 
 const WELCOME_MESSAGE = {
   role: 'bot',
